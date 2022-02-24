@@ -1,4 +1,4 @@
 package is.hi.hbv601g.quizlet;
 
-public class ProfileActivity {
+public class AccountActivity {
 }
