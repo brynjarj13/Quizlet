@@ -26,11 +26,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        userT = (EditText) findViewById(R.id.editTextTextPersonName);
+        passwordT = (EditText) findViewById(R.id.editTextTextPassword2);
+
         loginB = (Button) findViewById(R.id.loginButton);
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userT = (EditText) findViewById(R.id.editTextTextPersonName);
 
                 boolean loginFailed = false;
                 if(loginFailed){
