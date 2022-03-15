@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Username"
+        android:text="@string/field_username"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="252dp" />
 
@@ -27,7 +27,7 @@
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/button_login"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="365dp" />
 
@@ -35,7 +35,7 @@
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/button_register"
         tools:layout_editor_absoluteX="204dp"
         tools:layout_editor_absoluteY="365dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
