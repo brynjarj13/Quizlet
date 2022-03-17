@@ -10,4 +10,8 @@
     <string name="text_accountName">Account name:</string>
     <string name="text_emailAddress">Email address:</string>
     <string name="text_accountInfo">Account Information:</string>
+    <!--to toggle the open close button
+        of the navigation drawer-->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>
