@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Quizlet</string>
+    <string name="field_username">Username</string>
+    <string name="field_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Register</string>
+    <string name="error_login">Login failed!</string>
+    <string name="button_createQuiz">Create Quiz</string>
+    <string name="button_returnMain">Back to Quiz browser</string>
+    <string name="text_accountName">Account name:</string>
+    <string name="text_emailAddress">Email address:</string>
+    <string name="text_accountInfo">Account Information:</string>
 </resources>

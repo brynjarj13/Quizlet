@@ -3,13 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Notandi/Documents/GitHub/Quizlet/app/src/main/res/layout/activity_account.xml" value="0.9805389221556886" />
+        <entry key="..\:/Users/Notandi/Documents/GitHub/Quizlet/app/src/main/res/layout/activity_account.xml" value="0.25" />
         <entry key="..\:/Users/Notandi/Documents/GitHub/Quizlet/app/src/main/res/layout/activity_login.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/Notandi/Documents/GitHub/Quizlet/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Notandi/Documents/GitHub/Quizlet/app/src/main/res/layout/activity_quizcreator.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/brynj/AndroidStudioProjects/Quizlet/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/brynj/AndroidStudioProjects/Quizlet/app/src/main/res/layout/activity_profile.xml" value="0.21875" />
         <entry key="..\:/Users/brynj/AndroidStudioProjects/Quizlet/app/src/main/res/layout/activity_quiz.xml" value="0.21875" />
+        <entry key="..\:/Users/jso/Documents/GitHub/Quizlet/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/jso/Documents/GitHub/Quizlet/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/jso/Documents/GitHub/Quizlet/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21" />
+        <entry key="..\:/Users/jso/Documents/GitHub/Quizlet/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21" />
       </map>
     </option>
   </component>
