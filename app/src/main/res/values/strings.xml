@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Quizlet</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="field_username">Username</string>
     <string name="field_password">Password</string>
     <string name="button_login">Login</string>
