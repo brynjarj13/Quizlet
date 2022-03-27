@@ -5,36 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="116dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="201dp"
-        android:layout_marginBottom="30dp"
-        android:text="Creator is not ready!"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/NewQuizButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="103dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="134dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="113dp"
-        android:layout_marginBottom="233dp"
-        android:text="Return to main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:id="@+id/addQuestionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="398dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="119dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="40dp"
-        android:text="Please go back"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <EditText
+        android:id="@+id/newQuizAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Answer"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <Button
+        android:id="@+id/publishQuizButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Publish"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="398dp" />
+
+    <EditText
+        android:id="@+id/newQuizQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Question"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <Button
+        android:id="@+id/myQuizsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Quizes"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="103dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
