@@ -70,7 +70,6 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 quizWrongAnswer3.setVisibility(View.VISIBLE);
                 quizName.setVisibility(View.VISIBLE);
 
-
                 /*
                 Intent i = new Intent(QuizCreatorActivity.this, MainActivity.class);
                 startActivity(i);
@@ -107,15 +106,20 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 } else {
                     // disables editing in quizname edittext
                     quizName.setFocusable(false);
+
+                    if(question.isEmpty() ||
+                            answer.isEmpty() ||
+                            wrongAnswer1.isEmpty() ||
+                            wrongAnswer2.isEmpty() ||
+                            wrongAnswer3.isEmpty())  {
+                        Toast.makeText(QuizCreatorActivity.this,
+                                R.string.text_quizquestion_required,
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        // update quiz
+                        Toast.makeText(QuizCreatorActivity.this, R.string.text_quiz_updated, Toast.LENGTH_SHORT).show();
+                    }
                 }
-
-                if(question.isEmpty() || answer.isEmpty() || wrongAnswer1.isEmpty() || wrongAnswer2.isEmpty() || wrongAnswer3.isEmpty())  {
-                    Toast.makeText(QuizCreatorActivity.this, R.string.text_quizquestion_required, Toast.LENGTH_SHORT).show();
-                } else {
-                    // update quiz
-                }
-
-
 
             }
         });
