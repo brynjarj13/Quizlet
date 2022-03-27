@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Quizlet</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="field_username">Username</string>
     <string name="field_password">Password</string>
     <string name="button_login">Login</string>
@@ -10,6 +12,10 @@
     <string name="text_accountName">Account name:</string>
     <string name="text_emailAddress">Email address:</string>
     <string name="text_accountInfo">Account Information:</string>
+    <!--to toggle the open close button
+        of the navigation drawer-->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
     <string name="text_quizname_required">Please enter a quiz name</string>
     <string name="text_quizquestion_required">Please enter a question and answer</string>
 </resources>
