@@ -1,4 +1,6 @@
 package is.hi.hbv601g.quizlet;
 
-public class QuizActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class QuizActivity extends AppCompatActivity {
 }

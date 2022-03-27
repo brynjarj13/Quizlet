@@ -9,62 +9,121 @@
         android:id="@+id/NewQuizButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="31dp"
         android:text="New"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="63dp" />
+        app:layout_constraintBottom_toTopOf="@+id/quizNameEditText"
+        app:layout_constraintEnd_toStartOf="@+id/myQuizsButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/myQuizsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
         android:text="My Quizes"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="63dp" />
-
-    <EditText
-        android:id="@+id/newQuizQuestionEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Question"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="200dp" />
-
-    <EditText
-        android:id="@+id/newQuizAnswerEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Answer"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="267dp" />
-
-    <Button
-        android:id="@+id/addQuestionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="358dp" />
-
-    <Button
-        android:id="@+id/publishQuizButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Publish"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="358dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/NewQuizButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/NewQuizButton" />
 
     <EditText
         android:id="@+id/quizNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="9dp"
         android:ems="10"
+        android:hint="Quiz name"
         android:inputType="textPersonName"
-        android:text="Quiz name"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintBottom_toTopOf="@+id/newQuizQuestionEditText"
+        app:layout_constraintStart_toStartOf="@+id/NewQuizButton"
+        app:layout_constraintTop_toBottomOf="@+id/NewQuizButton" />
+
+    <EditText
+        android:id="@+id/newQuizQuestionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Question"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/newQuizAnswerEditText"
+        app:layout_constraintStart_toStartOf="@+id/quizNameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/quizNameEditText" />
+
+    <EditText
+        android:id="@+id/newQuizAnswerEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Right answer"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/wrongAnswer1EditText"
+        app:layout_constraintStart_toStartOf="@+id/newQuizQuestionEditText"
+        app:layout_constraintTop_toBottomOf="@+id/newQuizQuestionEditText" />
+
+    <Button
+        android:id="@+id/addQuestionButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:text="Add"
+        app:layout_constraintBottom_toTopOf="@+id/publishQuizButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wrongAnswer3EditText" />
+
+    <Button
+        android:id="@+id/publishQuizButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="123dp"
+        android:text="Publish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addQuestionButton" />
+
+    <EditText
+        android:id="@+id/wrongAnswer1EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Wrong answer 1"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/wrongAnswer2EditText"
+        app:layout_constraintStart_toStartOf="@+id/newQuizAnswerEditText"
+        app:layout_constraintTop_toBottomOf="@+id/newQuizAnswerEditText" />
+
+    <EditText
+        android:id="@+id/wrongAnswer2EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:hint="Wrong answer 2"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/wrongAnswer3EditText"
+        app:layout_constraintStart_toStartOf="@+id/wrongAnswer1EditText"
+        app:layout_constraintTop_toBottomOf="@+id/wrongAnswer1EditText" />
+
+    <EditText
+        android:id="@+id/wrongAnswer3EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:hint="Wrong answer 3"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/addQuestionButton"
+        app:layout_constraintStart_toStartOf="@+id/wrongAnswer2EditText"
+        app:layout_constraintTop_toBottomOf="@+id/wrongAnswer2EditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

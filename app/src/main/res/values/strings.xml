@@ -10,4 +10,6 @@
     <string name="text_accountName">Account name:</string>
     <string name="text_emailAddress">Email address:</string>
     <string name="text_accountInfo">Account Information:</string>
+    <string name="text_quizname_required">Please enter a quiz name</string>
+    <string name="text_quizquestion_required">Please enter a question and answer</string>
 </resources>
