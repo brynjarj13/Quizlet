@@ -10,51 +10,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="103dp" />
-
-    <Button
-        android:id="@+id/addQuestionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="398dp" />
-
-    <EditText
-        android:id="@+id/newQuizAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Answer"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="307dp" />
-
-    <Button
-        android:id="@+id/publishQuizButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Publish"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="398dp" />
-
-    <EditText
-        android:id="@+id/newQuizQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Question"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="240dp" />
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="63dp" />
 
     <Button
         android:id="@+id/myQuizsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Quizes"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="103dp" />
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <EditText
+        android:id="@+id/newQuizQuestionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Question"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <EditText
+        android:id="@+id/newQuizAnswerEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Answer"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="267dp" />
+
+    <Button
+        android:id="@+id/addQuestionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <Button
+        android:id="@+id/publishQuizButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Publish"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <EditText
+        android:id="@+id/quizNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Quiz name"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="139dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

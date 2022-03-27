@@ -24,8 +24,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizcreator);
 
-        quizQuestion = (EditText) findViewById(R.id.newQuizQuestion);
-        quizAnswer = (EditText) findViewById(R.id.newQuizAnswer);
+        quizQuestion = (EditText) findViewById(R.id.newQuizQuestionEditText);
+        quizAnswer = (EditText) findViewById(R.id.newQuizAnswerEditText);
 
         newQuizB = (Button) findViewById(R.id.NewQuizButton);
         newQuizB.setOnClickListener(new View.OnClickListener() {
