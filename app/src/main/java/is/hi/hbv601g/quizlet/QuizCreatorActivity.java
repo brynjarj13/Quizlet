@@ -37,11 +37,11 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 newQuizB.setVisibility(View.GONE);
                 boolean loginFailed = false;
                 if(loginFailed){
-                    Toast.makeText(LoginActivity.this, R.string.error_login, Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(LoginActivity.this, R.string.error_login, Toast.LENGTH_SHORT).show();
                 }else{
                     // go to main activity
-                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(i);
+                    // Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                    //startActivity(i);
                 }
             }
         });
