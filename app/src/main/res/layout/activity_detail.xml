@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/quizName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:paddingTop="20sp"
+        android:paddingLeft="20sp"
+        android:text="quiz name"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/count_of"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="right"
+        android:paddingTop="20sp"
+        android:paddingRight="50sp"
+        android:text="1"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/text_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="right"
+        android:paddingTop="20sp"
+        android:paddingRight="35sp"
+        android:text="/"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/count_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="right"
+        android:paddingTop="20sp"
+        android:paddingRight="20sp"
+        android:text="3"
+        android:textSize="25dp"/>
+
+    <Button
+        android:id="@+id/btn_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_two"/>
+
+    <Button
+        android:id="@+id/btn_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_three"/>
+
+    <Button
+        android:id="@+id/btn_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_four"/>
+
+    <Button
+        android:id="@+id/btn_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Question"
+        android:textSize="25sp"
+        android:paddingBottom="20sp"
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/image"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="1000dp"
+        android:layout_height="200dp"
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/btn_one"
+        android:layout_marginBottom="30dp"
+        app:srcCompat="@drawable/tristana" />
+
+</RelativeLayout>
