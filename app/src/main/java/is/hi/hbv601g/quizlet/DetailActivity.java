@@ -2,6 +2,7 @@ package is.hi.hbv601g.quizlet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -30,6 +32,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         btn_one = (Button)findViewById(R.id.btn_one);
         btn_one.setOnClickListener(this);
@@ -57,7 +62,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()){
             case R.id.btn_one:
                 if(btn_one.getText() == answer){
-                    Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     questionCorrect += 1;
                     if(questionLength == 0){
                         GameOver();
@@ -66,7 +73,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                         NextQuestion(questionCounter);
                     }
                 }else{
-                    Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     if(questionLength == 0){
                         GameOver();
                     }
@@ -79,7 +88,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btn_two:
                 if(btn_two.getText() == answer){
-                    Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     questionCorrect += 1;
                     if(questionLength == 0){
                         GameOver();
@@ -88,7 +99,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                         NextQuestion(questionCounter);
                     }
                 }else{
-                    Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     if(questionLength == 0){
                         GameOver();
                     }
@@ -101,7 +114,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btn_three:
                 if(btn_three.getText() == answer){
-                    Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     questionCorrect += 1;
                     if(questionLength == 0){
                         GameOver();
@@ -110,7 +125,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                         NextQuestion(questionCounter);
                     }
                 }else{
-                    Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     if(questionLength == 0){
                         GameOver();
                     }
@@ -123,7 +140,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btn_four:
                 if(btn_four.getText() == answer){
-                    Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Correct", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     questionCorrect += 1;
                     if(questionLength == 0){
                         GameOver();
@@ -132,7 +151,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                         NextQuestion(questionCounter);
                     }
                 }else{
-                    Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(DetailActivity.this, "You Are Incorrect", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                     if(questionLength == 0){
                         GameOver();
                     }

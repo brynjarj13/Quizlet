@@ -22,6 +22,9 @@
         android:orientation="horizontal">
 
         <Button
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="3dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -29,6 +32,9 @@
             android:id="@+id/allFilter"/>
 
         <Button
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -36,6 +42,9 @@
             android:id="@+id/moviesFilter"/>
 
         <Button
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="6dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -49,6 +58,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="3dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -56,6 +67,8 @@
             android:id="@+id/boardgameFilter"/>
 
         <Button
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="6dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -66,6 +79,7 @@
 
 
     <ListView
+        android:divider="@null"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/quizzesListView"/>
