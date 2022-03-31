@@ -4,16 +4,31 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:background="@drawable/layout_bg">
+    android:background="@drawable/quizlist_bg">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/quizName"
-        android:gravity="center_vertical"
-        android:text="quiz name"
-        android:textSize="20dp"
-        android:layout_marginLeft="20dp"/>
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quizName"
+            android:gravity="center_vertical"
+            android:text="quiz name"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quizSubtitle"
+            android:gravity="center_vertical"
+            android:text="quiz subtitle"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/quizImage"
