@@ -62,12 +62,12 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
             result_image.setImageResource(R.drawable.winner);
         }else if(questionCorrect >= (questionLength/2))
         {
-            results.setText("Not bad");
+            results.setText("Not bad.");
             result_image.setImageResource(R.drawable.notbad);
         }
         else
         {
-            results.setText("Maybe next time");
+            results.setText("Maybe next time...");
             result_image.setImageResource(R.drawable.nexttime);
         }
     }

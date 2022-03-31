@@ -14,9 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:gravity="left"
+        android:gravity="center"
         android:paddingTop="20sp"
-        android:paddingLeft="20sp"
         android:text="quiz name"
         android:textSize="25dp" />
 
