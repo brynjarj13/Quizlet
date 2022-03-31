@@ -131,16 +131,16 @@ public class HomeFragment extends Fragment {
 
     private void setupData()
     {
-        Quiz lol = new Quiz("0", "League of Legends Trivia", "videogames", "LEAGUE OF LEGENDS", 3, R.drawable.ic_videogames);
+        Quiz lol = new Quiz("0", "League of Legends Trivia", "videogames", "LEAGUE OF LEGENDS", 3, R.drawable.ic_videogames, 4.5F);
         quizList.add(lol);
 
-        Quiz lotr = new Quiz("1","LOTR Trivia", "movies","THE LORD OF THE RINGS", 2, R.drawable.ic_movies);
+        Quiz lotr = new Quiz("1","LOTR Trivia", "movies","THE LORD OF THE RINGS", 2, R.drawable.ic_movies,3.5F);
         quizList.add(lotr);
 
-        Quiz iceland = new Quiz("2","Guess the Icelandic Locations", "geography","ICELAND",4, R.drawable.ic_geography);
+        Quiz iceland = new Quiz("2","Guess the Icelandic Locations", "geography","ICELAND",4, R.drawable.ic_geography,5F);
         quizList.add(iceland);
 
-        Quiz risk = new Quiz("3","Risk Trivia", "boardgame","RISK",2, R.drawable.ic_boardgames);
+        Quiz risk = new Quiz("3","Risk Trivia", "boardgame","RISK",2, R.drawable.ic_boardgames,2F);
         quizList.add(risk);
 
     }

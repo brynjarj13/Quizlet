@@ -10,7 +10,8 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:layout_marginStart="20dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,16 +19,35 @@
             android:gravity="center_vertical"
             android:text="quiz name"
             android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"/>
+            android:textStyle="bold"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/quizSubcategory"
             android:gravity="center_vertical"
-            android:text="quiz subtitle"
-            android:textSize="10dp"
-            android:layout_marginLeft="20dp"/>
+            android:text="quiz subcategory"
+            android:textSize="10dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <RatingBar
+                android:id="@+id/quizRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:isIndicator="true"
+                android:stepSize=".5"
+                style="?android:attr/ratingBarStyleSmall"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/quizRatingText"
+                android:gravity="center_vertical"
+                android:text="quiz rating"
+                android:textSize="10dp"/>
+        </LinearLayout>
     </LinearLayout>
 
     <ImageView

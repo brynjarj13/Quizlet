@@ -7,14 +7,16 @@ class Quiz {
     private String subcategory;
     private int quizlength;
     private int image;
+    private float rating;
 
-    public Quiz(String id, String name, String genre, String subcategory, int quizlength, int image){
+    public Quiz(String id, String name, String genre, String subcategory, int quizlength, int image, float rating){
         this.id = id;
         this.name = name;
         this.genre = genre;
         this.subcategory = subcategory;
         this.quizlength = quizlength;
         this.image = image;
+        this.rating = rating;
     }
 
     public String getId() {
@@ -59,5 +61,13 @@ class Quiz {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 }

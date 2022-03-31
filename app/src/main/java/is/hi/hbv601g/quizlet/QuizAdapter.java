@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -24,13 +25,18 @@ public class QuizAdapter extends ArrayAdapter<Quiz> {
         {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_quiz, parent, false);
         }
-        TextView textViewName = (TextView) convertView.findViewById(R.id.quizName);
-        TextView textViewSubcategory = (TextView) convertView.findViewById(R.id.quizSubcategory);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.quizImage);
+        TextView tvQuizName = (TextView) convertView.findViewById(R.id.quizName);
+        TextView tvQuizSubcategory = (TextView) convertView.findViewById(R.id.quizSubcategory);
+        RatingBar rbQuizRating = (RatingBar) convertView.findViewById(R.id.quizRatingBar);
+        TextView tvQuizRating = (TextView) convertView.findViewById(R.id.quizRatingText);
+        ImageView ivQuizIcon = (ImageView) convertView.findViewById(R.id.quizImage);
 
-        textViewName.setText(quiz.getName());
-        textViewSubcategory.setText(quiz.getsubcategory());
-        iv.setImageResource(quiz.getImage());
+
+        tvQuizName.setText(quiz.getName());
+        tvQuizSubcategory.setText(quiz.getsubcategory());
+        rbQuizRating.setRating(quiz.getRating());
+        tvQuizRating.setText(String.valueOf(quiz.getRating()));
+        ivQuizIcon.setImageResource(quiz.getImage());
 
         return convertView;
     }
