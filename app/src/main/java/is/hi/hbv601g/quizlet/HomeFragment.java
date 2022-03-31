@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
@@ -105,7 +106,7 @@ public class HomeFragment extends Fragment {
 
                 for(Quiz quiz: quizList)
                 {
-                    if(quiz.getName().toLowerCase().contains(s.toLowerCase()))
+                    if(quiz.getName().toLowerCase().contains(s.toLowerCase()) || quiz.getsubcategory().toLowerCase().contains(s.toLowerCase()))
                     {
                         if(selectedFilter.equals("all"))
                         {
@@ -130,16 +131,16 @@ public class HomeFragment extends Fragment {
 
     private void setupData()
     {
-        Quiz lol = new Quiz("0", "League of Legends", "videogames", 3, R.drawable.ic_videogames);
+        Quiz lol = new Quiz("0", "League of Legends Trivia", "videogames", "LEAGUE OF LEGENDS", 3, R.drawable.ic_videogames);
         quizList.add(lol);
 
-        Quiz lotr = new Quiz("1","The Lord of the Rings", "movies", 2, R.drawable.ic_movies);
+        Quiz lotr = new Quiz("1","LOTR Trivia", "movies","THE LORD OF THE RINGS", 2, R.drawable.ic_movies);
         quizList.add(lotr);
 
-        Quiz iceland = new Quiz("2","Iceland", "geography",4, R.drawable.ic_geography);
+        Quiz iceland = new Quiz("2","Guess the Icelandic Locations", "geography","ICELAND",4, R.drawable.ic_geography);
         quizList.add(iceland);
 
-        Quiz risk = new Quiz("3","Risk", "boardgame",2, R.drawable.ic_boardgames);
+        Quiz risk = new Quiz("3","Risk Trivia", "boardgame","RISK",2, R.drawable.ic_boardgames);
         quizList.add(risk);
 
     }

@@ -24,10 +24,12 @@ public class QuizAdapter extends ArrayAdapter<Quiz> {
         {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_quiz, parent, false);
         }
-        TextView tv = (TextView) convertView.findViewById(R.id.quizName);
+        TextView textViewName = (TextView) convertView.findViewById(R.id.quizName);
+        TextView textViewSubcategory = (TextView) convertView.findViewById(R.id.quizSubcategory);
         ImageView iv = (ImageView) convertView.findViewById(R.id.quizImage);
 
-        tv.setText(quiz.getName());
+        textViewName.setText(quiz.getName());
+        textViewSubcategory.setText(quiz.getsubcategory());
         iv.setImageResource(quiz.getImage());
 
         return convertView;

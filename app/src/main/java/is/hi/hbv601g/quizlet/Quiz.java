@@ -4,13 +4,15 @@ class Quiz {
     private String id;
     private String name;
     private String genre;
+    private String subcategory;
     private int quizlength;
     private int image;
 
-    public Quiz(String id, String name, String genre, int quizlength, int image){
+    public Quiz(String id, String name, String genre, String subcategory, int quizlength, int image){
         this.id = id;
         this.name = name;
         this.genre = genre;
+        this.subcategory = subcategory;
         this.quizlength = quizlength;
         this.image = image;
     }
@@ -36,6 +38,12 @@ class Quiz {
     }
 
     public void setGenre(String genre) { this.genre = genre; }
+
+    public String getsubcategory() {
+        return subcategory;
+    }
+
+    public void setsubcategory(String subcategory) { this.subcategory = subcategory; }
 
     public int getQuizlength() {
         return quizlength;
