@@ -7,14 +7,17 @@
 
     <TextView
         android:id="@+id/quizName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="left"
         android:paddingTop="20sp"
         android:paddingLeft="20sp"
         android:text="quiz name"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxEms="11"/>
 
     <TextView
         android:id="@+id/count_of"
