@@ -18,7 +18,7 @@
             android:id="@+id/quizName"
             android:gravity="center_vertical"
             android:text="quiz name"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:textStyle="bold"/>
         <TextView
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:id="@+id/quizSubcategory"
             android:gravity="center_vertical"
             android:text="quiz subcategory"
-            android:textSize="10dp" />
+            android:textSize="14dp" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -46,7 +46,8 @@
                 android:id="@+id/quizRatingText"
                 android:gravity="center_vertical"
                 android:text="quiz rating"
-                android:textSize="10dp"/>
+                android:textSize="14dp"
+                android:layout_marginLeft="2dp"/>
         </LinearLayout>
     </LinearLayout>
 
