@@ -2,15 +2,22 @@ package is.hi.hbv601g.quizlet;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.database.sqlite.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
 public class QuizCreatorActivity extends AppCompatActivity{
+
+    //list view to see quizes
+    ListView lv_quizList;
 
     private Button newQuizB;
     private Button myQuizB;
@@ -33,6 +40,14 @@ public class QuizCreatorActivity extends AppCompatActivity{
 
         //sqlHelper = new MyDbAdapter(this);
 
+        //array adapter
+        ArrayAdapter quizArrayAdapter;
+
+        //list view and set to invis for now
+        lv_quizList = (ListView) findViewById(R.id.myQuizListView);
+        lv_quizList.setVisibility(View.INVISIBLE);
+        lv_quizList.setFocusable(false);
+
         quizQuestion = (EditText) findViewById(R.id.newQuizQuestionEditText);
         quizAnswer = (EditText) findViewById(R.id.newQuizAnswerEditText);
         quizWrongAnswer1 = (EditText) findViewById(R.id.wrongAnswer1EditText);
@@ -51,7 +66,7 @@ public class QuizCreatorActivity extends AppCompatActivity{
         newQuizB = (Button) findViewById(R.id.NewQuizButton);
         myQuizB = (Button) findViewById(R.id.myQuizsButton);
         addQuestionB = (Button) findViewById(R.id.addQuestionButton);
-        publishQuizB = (Button) findViewById(R.id.addQuestionButton);
+        publishQuizB = (Button) findViewById(R.id.publishQuizButton);
 
 
         newQuizB.setOnClickListener(new View.OnClickListener() {
@@ -60,8 +75,16 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 // interface for a new quiz
                 // hide my quiz button and new quiz button
                 // View.VISIBILE myndir gera þá aftur sýnilega
-                myQuizB.setVisibility(View.INVISIBLE);
-                newQuizB.setVisibility(View.INVISIBLE);
+                //myQuizB.setVisibility(View.INVISIBLE);
+                //newQuizB.setVisibility(View.INVISIBLE);
+                quizName.setFocusable(true);
+
+                quizName.getText().clear();
+                quizQuestion.getText().clear();
+                quizAnswer.getText().clear();
+                quizWrongAnswer1.getText().clear();
+                quizWrongAnswer2.getText().clear();
+                quizWrongAnswer3.getText().clear();
 
                 quizQuestion.setVisibility(View.VISIBLE);
                 quizAnswer.setVisibility(View.VISIBLE);
@@ -69,6 +92,9 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 quizWrongAnswer2.setVisibility(View.VISIBLE);
                 quizWrongAnswer3.setVisibility(View.VISIBLE);
                 quizName.setVisibility(View.VISIBLE);
+
+                lv_quizList.setFocusable(false);
+                lv_quizList.setVisibility(View.INVISIBLE);
 
                 /*
                 Intent i = new Intent(QuizCreatorActivity.this, MainActivity.class);
@@ -90,6 +116,7 @@ public class QuizCreatorActivity extends AppCompatActivity{
         });
 
 
+        // add question to the quiz
         addQuestionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +127,9 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 String wrongAnswer1 = quizWrongAnswer1.getText().toString();
                 String wrongAnswer2 = quizWrongAnswer2.getText().toString();
                 String wrongAnswer3 = quizWrongAnswer3.getText().toString();;
+
+                // to get the database, send context to the constructor
+                DatabaseLite dbl = new DatabaseLite(QuizCreatorActivity.this);
 
                 if(name.isEmpty()){
                     Toast.makeText(QuizCreatorActivity.this, R.string.text_quizname_required, Toast.LENGTH_SHORT).show();
@@ -117,7 +147,30 @@ public class QuizCreatorActivity extends AppCompatActivity{
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         // update quiz
-                        Toast.makeText(QuizCreatorActivity.this, R.string.text_quiz_updated, Toast.LENGTH_SHORT).show();
+
+                        QuizModel qm;
+                        try {
+                            qm = new QuizModel(-1, name, question, answer, wrongAnswer1, wrongAnswer2, wrongAnswer3);
+                            Toast.makeText(QuizCreatorActivity.this, qm.toString(), Toast.LENGTH_LONG).show();
+                            dbl.addQuiz(qm);
+
+                        } catch (Exception e) {
+                            Toast.makeText(QuizCreatorActivity.this, "error creating question", Toast.LENGTH_LONG).show();
+                            // something went wrong
+                            qm = new QuizModel(-1, "error", "error", "error", "error", "error", "error");
+                            dbl.addQuiz(qm);
+                        }
+
+
+                        quizQuestion.getText().clear();
+                        quizAnswer.getText().clear();
+                        quizWrongAnswer1.getText().clear();
+                        quizWrongAnswer2.getText().clear();
+                        quizWrongAnswer3.getText().clear();
+
+
+
+
                     }
                 }
 
@@ -129,6 +182,34 @@ public class QuizCreatorActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 // publish quiz to server
+                Toast.makeText(QuizCreatorActivity.this, "publishing", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        myQuizB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                quizQuestion.setVisibility(View.INVISIBLE);
+                quizAnswer.setVisibility(View.INVISIBLE);
+                quizWrongAnswer1.setVisibility(View.INVISIBLE);
+                quizWrongAnswer2.setVisibility(View.INVISIBLE);
+                quizWrongAnswer3.setVisibility(View.INVISIBLE);
+                quizName.setVisibility(View.INVISIBLE);
+
+
+                // see my quiz
+                lv_quizList.setFocusable(true);
+                lv_quizList.setVisibility(View.VISIBLE);
+                DatabaseLite dbs = new DatabaseLite(QuizCreatorActivity.this);
+                List<QuizModel> allQuiz = dbs.getQuizes();
+
+
+                ArrayAdapter quizArrayAdapter = new ArrayAdapter<QuizModel>(QuizCreatorActivity.this, android.R.layout.simple_list_item_1, allQuiz);
+                lv_quizList.setAdapter(quizArrayAdapter);
+
+                Toast.makeText(QuizCreatorActivity.this, allQuiz.toString(), Toast.LENGTH_SHORT).show();
+
             }
         });
 
