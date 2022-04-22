@@ -33,13 +33,63 @@ public class DatabaseLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTableStatement = "CREATE TABLE " + QUIZ_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, " + COLUMN_QUESTION + " TEXT, " + COLUMN_RIGHT_ANSWER + " TEXT,  " + COLUMN_WRONG_ANSWER_ONE + " TEXT, " + COLUMN_WRONG_ANSWER_TWO + " TEXT, " + COLUMN_WRONG_ANSWER_THREE + " TEXT, " + COLUMN_QUIZ_GENRE + " TEXT, " + COLUMN_QUIZ_IMAGE_URL + " TEXT)";
+        String createTableStatement = "CREATE TABLE " + QUIZ_TABLE + " ("
+                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_NAME + " TEXT, "
+                + COLUMN_QUESTION + " TEXT, "
+                + COLUMN_RIGHT_ANSWER + " TEXT,  "
+                + COLUMN_WRONG_ANSWER_ONE + " TEXT, "
+                + COLUMN_WRONG_ANSWER_TWO + " TEXT, "
+                + COLUMN_WRONG_ANSWER_THREE + " TEXT, "
+                + COLUMN_QUIZ_GENRE + " TEXT, "
+                + COLUMN_QUIZ_IMAGE_URL + " TEXT)";
 
         sqLiteDatabase.execSQL(createTableStatement);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+
+    public  boolean deleteQuestion(QuizModel quizModel) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String qs = "DELETE FROM " + QUIZ_TABLE
+                + " WHERE " + COLUMN_ID + " = " + quizModel.getId();
+
+        Cursor cursor = db.rawQuery(qs,null);
+
+        if(cursor.moveToFirst()) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean updateQuiz (QuizModel quizModel, String condition) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        // pair the columns with the updated values
+        cv.put(COLUMN_NAME, quizModel.getQuizName());
+        cv.put(COLUMN_QUESTION, quizModel.getQuizQuestion());
+        cv.put(COLUMN_RIGHT_ANSWER, quizModel.getQuizAnswer());
+        cv.put(COLUMN_WRONG_ANSWER_ONE, quizModel.getQuizWrongAnswerOne());
+        cv.put(COLUMN_WRONG_ANSWER_TWO, quizModel.getQuizWrongAnswerTwo());
+        cv.put(COLUMN_WRONG_ANSWER_THREE, quizModel.getQuizWrongAnswerThree());
+        cv.put(COLUMN_QUIZ_GENRE, quizModel.getQuizGenre());
+        cv.put(COLUMN_QUIZ_IMAGE_URL, quizModel.getQuizImageURL());
+
+        // replaces values where the whereClause (text in quotation marks) matches
+        long update = db.update(QUIZ_TABLE, cv, "QUIZ_QUESTION=?", new String[]{condition});
+        db.close();
+
+        if(update == -1) {
+            return false;
+        } else {
+            return true;
+        }
 
     }
 
@@ -59,12 +109,14 @@ public class DatabaseLite extends SQLiteOpenHelper {
         cv.put(COLUMN_QUIZ_IMAGE_URL, quizModel.getQuizImageURL());
 
         long insert = db.insert(QUIZ_TABLE,null,cv);
+        db.close();
         // a check to see if the insert works
         if(insert == -1) {
             return false;
         } else {
             return true;
         }
+
 
     }
     // currently returns all items in quiz table
