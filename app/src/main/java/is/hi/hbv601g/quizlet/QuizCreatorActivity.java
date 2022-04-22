@@ -84,6 +84,7 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 // View.VISIBILE myndir gera þá aftur sýnilega
                 //myQuizB.setVisibility(View.INVISIBLE);
                 //newQuizB.setVisibility(View.INVISIBLE);
+                quizName.setFocusableInTouchMode(true);
                 quizName.setFocusable(true);
 
                 quizName.getText().clear();
@@ -105,6 +106,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 lv_quizList.setFocusable(false);
                 lv_quizList.setVisibility(View.INVISIBLE);
 
+
+
                 /*
                 Intent i = new Intent(QuizCreatorActivity.this, MainActivity.class);
                 startActivity(i);
@@ -113,16 +116,7 @@ public class QuizCreatorActivity extends AppCompatActivity{
         });
 
 
-        myQuizB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // get a list of user's quizses
-                // hide new quiz button and new quiz button
-                newQuizB.setVisibility(View.INVISIBLE);
-                myQuizB.setVisibility(View.INVISIBLE);
 
-            }
-        });
 
 
         // add question to the quiz
@@ -162,11 +156,11 @@ public class QuizCreatorActivity extends AppCompatActivity{
                         QuizModel qm;
                         try {
                             qm = new QuizModel(-1, name, question, answer, wrongAnswer1, wrongAnswer2, wrongAnswer3,genre,imgURL);
-                            Toast.makeText(QuizCreatorActivity.this, qm.toString(), Toast.LENGTH_LONG).show();
+                            //Toast.makeText(QuizCreatorActivity.this, qm.toString(), Toast.LENGTH_LONG).show();
                             dbl.addQuiz(qm);
 
                         } catch (Exception e) {
-                            Toast.makeText(QuizCreatorActivity.this, "error creating question", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(QuizCreatorActivity.this, "error creating question", Toast.LENGTH_LONG).show();
                             // something went wrong
                             qm = new QuizModel(-1, "error", "error", "error", "error", "error", "error","error","error");
                             dbl.addQuiz(qm);
@@ -220,17 +214,22 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 ArrayAdapter quizArrayAdapter = new ArrayAdapter<QuizModel>(QuizCreatorActivity.this, android.R.layout.simple_list_item_1, allQuiz);
                 lv_quizList.setAdapter(quizArrayAdapter);
 
-                Toast.makeText(QuizCreatorActivity.this, allQuiz.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(QuizCreatorActivity.this, allQuiz.toString(), Toast.LENGTH_SHORT).show();
 
             }
         });
 
 
-        // can interact with the clicked item in the list, does nothing atm
+        // can interact with the clicked item in the list, currently deletes the object
+        // late to be focused on and given choice to update or delete
         lv_quizList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                QuizModel clickedQuiz = (QuizModel) adapterView.getItemAtPosition(i);
+                QuizModel clickedQuestion = (QuizModel) adapterView.getItemAtPosition(i);
+                DatabaseLite dbs = new DatabaseLite(QuizCreatorActivity.this);
+                dbs.deleteQuestion(clickedQuestion);
+                ArrayAdapter quizArrayAdapter = new ArrayAdapter<QuizModel>(QuizCreatorActivity.this, android.R.layout.simple_list_item_1, dbs.getQuizes());
+                lv_quizList.setAdapter(quizArrayAdapter);
 
 
             }
