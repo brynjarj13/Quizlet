@@ -5,51 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/genreEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Genre"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/wrongAnswer3EditText"
+        app:layout_constraintTop_toBottomOf="@+id/wrongAnswer3EditText" />
+
+    <EditText
+        android:id="@+id/imageURLEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Image URL"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/genreEditText"
+        app:layout_constraintTop_toBottomOf="@+id/genreEditText" />
+
     <Button
         android:id="@+id/NewQuizButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="31dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="36dp"
         android:text="New"
-        app:layout_constraintBottom_toTopOf="@+id/quizNameEditText"
-        app:layout_constraintEnd_toStartOf="@+id/myQuizsButton"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/myQuizListView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/myQuizsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="18dp"
         android:text="My Quiz"
-        app:layout_constraintBaseline_toBaselineOf="@+id/NewQuizButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/NewQuizButton" />
+        app:layout_constraintBottom_toTopOf="@+id/quizNameEditText"
+        app:layout_constraintEnd_toEndOf="@+id/myQuizListView" />
 
     <EditText
         android:id="@+id/quizNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="9dp"
         android:ems="10"
         android:hint="Quiz name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/newQuizQuestionEditText"
-        app:layout_constraintStart_toStartOf="@+id/NewQuizButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NewQuizButton" />
 
     <EditText
         android:id="@+id/newQuizQuestionEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Question"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/newQuizAnswerEditText"
         app:layout_constraintStart_toStartOf="@+id/quizNameEditText"
         app:layout_constraintTop_toBottomOf="@+id/quizNameEditText" />
 
@@ -57,45 +69,42 @@
         android:id="@+id/newQuizAnswerEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Right answer"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/wrongAnswer1EditText"
         app:layout_constraintStart_toStartOf="@+id/newQuizQuestionEditText"
         app:layout_constraintTop_toBottomOf="@+id/newQuizQuestionEditText" />
 
     <Button
         android:id="@+id/addQuestionButton"
-        android:layout_width="332dp"
-        android:layout_height="61dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="21dp"
         android:text="Add"
-        app:layout_constraintBottom_toTopOf="@+id/publishQuizButton"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/publishQuizButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wrongAnswer3EditText" />
+        app:layout_constraintTop_toBottomOf="@+id/myQuizListView" />
 
     <Button
         android:id="@+id/publishQuizButton"
-        android:layout_width="334dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="123dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="41dp"
         android:text="Publish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addQuestionButton" />
+        app:layout_constraintStart_toEndOf="@+id/addQuestionButton"
+        app:layout_constraintTop_toBottomOf="@+id/myQuizListView" />
 
     <EditText
         android:id="@+id/wrongAnswer1EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Wrong answer 1"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/wrongAnswer2EditText"
         app:layout_constraintStart_toStartOf="@+id/newQuizAnswerEditText"
         app:layout_constraintTop_toBottomOf="@+id/newQuizAnswerEditText" />
 
@@ -103,11 +112,9 @@
         android:id="@+id/wrongAnswer2EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
         android:ems="10"
         android:hint="Wrong answer 2"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/wrongAnswer3EditText"
         app:layout_constraintStart_toStartOf="@+id/wrongAnswer1EditText"
         app:layout_constraintTop_toBottomOf="@+id/wrongAnswer1EditText" />
 
@@ -115,22 +122,24 @@
         android:id="@+id/wrongAnswer3EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
         android:ems="10"
         android:hint="Wrong answer 3"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/addQuestionButton"
         app:layout_constraintStart_toStartOf="@+id/wrongAnswer2EditText"
         app:layout_constraintTop_toBottomOf="@+id/wrongAnswer2EditText" />
 
     <ListView
         android:id="@+id/myQuizListView"
-        android:layout_width="353dp"
-        android:layout_height="509dp"
-        android:layout_marginBottom="64dp"
-        android:background="@color/cardview_light_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="49dp"
+        android:background="@color/design_default_color_primary_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/NewQuizButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

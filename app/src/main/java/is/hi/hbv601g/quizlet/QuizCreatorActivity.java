@@ -31,6 +31,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
     private EditText quizWrongAnswer1;
     private EditText quizWrongAnswer2;
     private EditText quizWrongAnswer3;
+    private EditText quizGenre;
+    private EditText quizImageURL;
     // sql lite
     //MyDbAdapter sqlHelper;
 
@@ -55,6 +57,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
         quizWrongAnswer2 = (EditText) findViewById(R.id.wrongAnswer2EditText);
         quizWrongAnswer3 = (EditText) findViewById(R.id.wrongAnswer3EditText);
         quizName = (EditText) findViewById(R.id.quizNameEditText);
+        quizGenre = (EditText) findViewById(R.id.genreEditText);
+        quizImageURL = (EditText) findViewById(R.id.imageURLEditText);
 
         quizQuestion.setVisibility(View.INVISIBLE);
         quizAnswer.setVisibility(View.INVISIBLE);
@@ -62,6 +66,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
         quizWrongAnswer2.setVisibility(View.INVISIBLE);
         quizWrongAnswer3.setVisibility(View.INVISIBLE);
         quizName.setVisibility(View.INVISIBLE);
+        quizGenre.setVisibility(View.INVISIBLE);
+        quizImageURL.setVisibility(View.INVISIBLE);
 
 
         newQuizB = (Button) findViewById(R.id.NewQuizButton);
@@ -93,6 +99,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 quizWrongAnswer2.setVisibility(View.VISIBLE);
                 quizWrongAnswer3.setVisibility(View.VISIBLE);
                 quizName.setVisibility(View.VISIBLE);
+                quizGenre.setVisibility(View.VISIBLE);
+                quizImageURL.setVisibility(View.VISIBLE);
 
                 lv_quizList.setFocusable(false);
                 lv_quizList.setVisibility(View.INVISIBLE);
@@ -128,6 +136,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 String wrongAnswer1 = quizWrongAnswer1.getText().toString();
                 String wrongAnswer2 = quizWrongAnswer2.getText().toString();
                 String wrongAnswer3 = quizWrongAnswer3.getText().toString();;
+                String genre = quizGenre.getText().toString();;
+                String imgURL = quizImageURL.getText().toString();;
 
                 // to get the database, send context to the constructor
                 DatabaseLite dbl = new DatabaseLite(QuizCreatorActivity.this);
@@ -151,14 +161,14 @@ public class QuizCreatorActivity extends AppCompatActivity{
 
                         QuizModel qm;
                         try {
-                            qm = new QuizModel(-1, name, question, answer, wrongAnswer1, wrongAnswer2, wrongAnswer3);
+                            qm = new QuizModel(-1, name, question, answer, wrongAnswer1, wrongAnswer2, wrongAnswer3,genre,imgURL);
                             Toast.makeText(QuizCreatorActivity.this, qm.toString(), Toast.LENGTH_LONG).show();
                             dbl.addQuiz(qm);
 
                         } catch (Exception e) {
                             Toast.makeText(QuizCreatorActivity.this, "error creating question", Toast.LENGTH_LONG).show();
                             // something went wrong
-                            qm = new QuizModel(-1, "error", "error", "error", "error", "error", "error");
+                            qm = new QuizModel(-1, "error", "error", "error", "error", "error", "error","error","error");
                             dbl.addQuiz(qm);
                         }
 
@@ -168,6 +178,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
                         quizWrongAnswer1.getText().clear();
                         quizWrongAnswer2.getText().clear();
                         quizWrongAnswer3.getText().clear();
+                        quizGenre.getText().clear();
+                        quizImageURL.getText().clear();
 
                     }
                 }
@@ -194,6 +206,8 @@ public class QuizCreatorActivity extends AppCompatActivity{
                 quizWrongAnswer2.setVisibility(View.INVISIBLE);
                 quizWrongAnswer3.setVisibility(View.INVISIBLE);
                 quizName.setVisibility(View.INVISIBLE);
+                quizGenre.setVisibility(View.INVISIBLE);
+                quizImageURL.setVisibility(View.INVISIBLE);
 
 
                 // see my quiz

@@ -23,6 +23,9 @@ public class DatabaseLite extends SQLiteOpenHelper {
     public static final String COLUMN_WRONG_ANSWER_ONE = "QUIZ_WRONG_ANSWER_ONE" ;
     public static final String COLUMN_WRONG_ANSWER_TWO = "QUIZ_WRONG_ANSWER_TWO" ;
     public static final String COLUMN_WRONG_ANSWER_THREE = "QUIZ_WRONG_ANSWER_THREE" ;
+    public static final String COLUMN_QUIZ_GENRE = "QUIZ_GENRE" ;
+    public static final String COLUMN_QUIZ_IMAGE_URL = "QUIZ_IMAGE_URL" ;
+
 
     public DatabaseLite(@Nullable Context context) {
         super(context, "Quiz.db", null,  1);
@@ -30,7 +33,7 @@ public class DatabaseLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTableStatement = "CREATE TABLE " + QUIZ_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, " + COLUMN_QUESTION + " TEXT, " + COLUMN_RIGHT_ANSWER + " TEXT,  " + COLUMN_WRONG_ANSWER_ONE + " TEXT, " + COLUMN_WRONG_ANSWER_TWO + " TEXT, " + COLUMN_WRONG_ANSWER_THREE + " TEXT)";
+        String createTableStatement = "CREATE TABLE " + QUIZ_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, " + COLUMN_QUESTION + " TEXT, " + COLUMN_RIGHT_ANSWER + " TEXT,  " + COLUMN_WRONG_ANSWER_ONE + " TEXT, " + COLUMN_WRONG_ANSWER_TWO + " TEXT, " + COLUMN_WRONG_ANSWER_THREE + " TEXT, " + COLUMN_QUIZ_GENRE + " TEXT, " + COLUMN_QUIZ_IMAGE_URL + " TEXT)";
 
         sqLiteDatabase.execSQL(createTableStatement);
     }
@@ -52,6 +55,8 @@ public class DatabaseLite extends SQLiteOpenHelper {
         cv.put(COLUMN_WRONG_ANSWER_ONE, quizModel.getQuizWrongAnswerOne());
         cv.put(COLUMN_WRONG_ANSWER_TWO, quizModel.getQuizWrongAnswerTwo());
         cv.put(COLUMN_WRONG_ANSWER_THREE, quizModel.getQuizWrongAnswerThree());
+        cv.put(COLUMN_QUIZ_GENRE, quizModel.getQuizGenre());
+        cv.put(COLUMN_QUIZ_IMAGE_URL, quizModel.getQuizImageURL());
 
         long insert = db.insert(QUIZ_TABLE,null,cv);
         // a check to see if the insert works
@@ -78,12 +83,16 @@ public class DatabaseLite extends SQLiteOpenHelper {
                 int quizID = cursor.getInt(0);
                 String quizName = cursor.getString(1);
                 String quizQuestion = cursor.getString(2);
-                String QuizAnswer = cursor.getString(3);
-                String QuizWrongOne = cursor.getString(4);
-                String QuizWrongTwo = cursor.getString(5);
-                String QuizWrongThree = cursor.getString(6);
+                String quizAnswer = cursor.getString(3);
+                String quizWrongOne = cursor.getString(4);
+                String quizWrongTwo = cursor.getString(5);
+                String quizWrongThree = cursor.getString(6);
+                String quizGenre = cursor.getString(7);
+                String quizImageURL = cursor.getString(8);
 
-                QuizModel newQuiz = new QuizModel(quizID,quizName,quizQuestion,QuizAnswer,QuizWrongOne,QuizWrongTwo,QuizWrongThree);
+                QuizModel newQuiz = new QuizModel(
+                        quizID,quizName,quizQuestion,quizAnswer,quizWrongOne,quizWrongTwo,quizWrongThree,quizGenre,quizImageURL);
+
                 returnQuizList.add(newQuiz);
             // has to be move to next to prevent it from looping endlessly
             } while (cursor.moveToNext());
@@ -91,7 +100,7 @@ public class DatabaseLite extends SQLiteOpenHelper {
         }else {
             // no list so created a error filler message that creates an obvious way to see something went wrong
             String errorfiller = "error";
-            QuizModel newQuiz = new QuizModel(1,errorfiller,errorfiller,errorfiller,errorfiller,errorfiller,errorfiller);
+            QuizModel newQuiz = new QuizModel(1,errorfiller,errorfiller,errorfiller,errorfiller,errorfiller,errorfiller,errorfiller,errorfiller);
             returnQuizList.add(newQuiz);
 
         }
