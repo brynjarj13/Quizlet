@@ -2,6 +2,7 @@ package is.hi.hbv601g.quizlet;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.os.Bundle;
@@ -213,6 +214,16 @@ public class QuizCreatorActivity extends AppCompatActivity{
             }
         });
 
+
+        // can interact with the clicked item in the list, does nothing atm
+        lv_quizList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                QuizModel clickedQuiz = (QuizModel) adapterView.getItemAtPosition(i);
+
+
+            }
+        });
 
 
     }
