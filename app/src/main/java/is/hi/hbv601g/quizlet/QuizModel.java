@@ -11,9 +11,11 @@ public class QuizModel {
     private String quizWrongAnswerOne;
     private String quizWrongAnswerTwo;
     private String quizWrongAnswerThree;
-    private int quizNumber;
+    private String quizGenre;
+    private String quizImageURL;
 
-    public QuizModel(int id, String quizName, String quizQuestion, String quizAnswer, String quizWrongAnswerOne, String quizWrongAnswerTwo, String quizWrongAnswerThree) {
+
+    public QuizModel(int id, String quizName, String quizQuestion, String quizAnswer, String quizWrongAnswerOne, String quizWrongAnswerTwo, String quizWrongAnswerThree, String quizGenre, String quizImageURL) {
         this.id = id;
         this.quizName = quizName;
         this.quizQuestion = quizQuestion;
@@ -21,11 +23,14 @@ public class QuizModel {
         this.quizWrongAnswerOne = quizWrongAnswerOne;
         this.quizWrongAnswerTwo = quizWrongAnswerTwo;
         this.quizWrongAnswerThree = quizWrongAnswerThree;
+        this.quizGenre = quizGenre;
+        this.quizImageURL = quizImageURL;
     }
 
     public QuizModel() {
 
     }
+
 
     @Override
     public String toString() {
@@ -37,10 +42,10 @@ public class QuizModel {
                 ", quizWrongAnswerOne='" + quizWrongAnswerOne + '\'' +
                 ", quizWrongAnswerTwo='" + quizWrongAnswerTwo + '\'' +
                 ", quizWrongAnswerThree='" + quizWrongAnswerThree + '\'' +
+                ", quizGenre='" + quizGenre + '\'' +
+                ", quizImageURL='" + quizImageURL + '\'' +
                 '}';
     }
-
-    // getters & Setters
 
     public int getId() {
         return id;
@@ -96,5 +101,21 @@ public class QuizModel {
 
     public void setQuizWrongAnswerThree(String quizWrongAnswerThree) {
         this.quizWrongAnswerThree = quizWrongAnswerThree;
+    }
+
+    public String getQuizGenre() {
+        return quizGenre;
+    }
+
+    public void setQuizGenre(String quizGenre) {
+        this.quizGenre = quizGenre;
+    }
+
+    public String getQuizImageURL() {
+        return quizImageURL;
+    }
+
+    public void setQuizImageURL(String quizImageURL) {
+        this.quizImageURL = quizImageURL;
     }
 }
