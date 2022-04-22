@@ -162,15 +162,12 @@ public class QuizCreatorActivity extends AppCompatActivity{
                             dbl.addQuiz(qm);
                         }
 
-
+                        // hiding text but should be creating a 2nd layout for layout objects that interfere with each other
                         quizQuestion.getText().clear();
                         quizAnswer.getText().clear();
                         quizWrongAnswer1.getText().clear();
                         quizWrongAnswer2.getText().clear();
                         quizWrongAnswer3.getText().clear();
-
-
-
 
                     }
                 }
